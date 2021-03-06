@@ -1,0 +1,116 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+}
+
+nav {
+    background-color: #BE3144;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+#navbar-container li {
+    list-style-type: none;
+    display: inline;
+}
+
+#navbar-container a {
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+
+#navbar-container li a:hover {
+    background-color: teal;
+    overflow: hidden;
+}
+
+#header {
+    height: 100vh;
+    background: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#header h1{
+    display: block;
+    font-size: 3.5rem;
+    color: white;
+    margin: 0;
+}
+
+#header p {
+    display: block;
+    color: #BE3144;
+    font-style: italic;
+    font-size: 2em;
+    margin: 0;
+}
+
+.portfolio-section {
+    text-align: center;
+    background-color: #45567d;
+    padding: 100px 50px;
+}
+
+.portfolio-grid {
+    display: grid;
+    max-width: 1280px;
+    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    overflow: hidden;
+    gap: 50px;
+}
+
+.project {
+    display: block;
+}
+
+.portfolio-section h2 {
+    color: white;
+    font-size: 2em;
+    padding-bottom: 25px;
+}
+
+.project img {
+    display: block;
+    width: 100%;
+}
+
+.project p {
+    background-color: grey;
+    padding: 20px;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    transition: ease-out;
+}
+
+.project p span {
+    display: none;
+    position: absolute;
+    color: orange;
+    font-weight: bold;
+}
+
+.project p:hover span {
+    display: inline-block;
+}
+
+.span-left {
+    transform: translate(-20px);
+}
+
+.span-right {
+    transform: translate(5px);
+}

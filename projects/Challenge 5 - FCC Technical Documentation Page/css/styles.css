@@ -1,0 +1,121 @@
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    border-right: 2px solid lightgrey;
+}
+
+nav ul {
+    padding-left: 0;
+}
+
+nav ul li {
+    border-top: 1px solid lightgrey;
+    list-style-type: none;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #4d4e53;
+    padding: 10px 30px;
+}
+
+nav ul li:hover {
+    color: black;
+    background-color: lightgrey;
+    transition: ease-in-out 100ms;
+}
+
+nav header {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+main {
+    margin-left: 310px;
+    padding: 50px;
+}
+
+header {
+    font-size: 1.8rem;
+    margin-left: -15px;
+}
+
+main p {
+    color: #4d4e53;
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+}
+
+li {
+    color: #4d4e53;
+    font-size: 0.95rem;
+}
+
+main li {
+    margin: 20px auto;
+}
+
+main section code {
+    display: block;
+    padding: 15px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    line-height: 2;
+    font-size: 0.95rem;
+    margin: 10px;
+    white-space: pre-line;
+}
+
+#myBtn {
+    display: block;
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: lightgrey; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  #myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
+
+@media only screen and (max-width:815px) {
+
+    nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 30vh;
+        width: 100%;
+        border-right: 0px;
+    }
+
+    nav ul {
+        overflow-y: scroll;
+        height: 20vh;
+        border: 2px solid #4d4e53;
+    }
+
+    main {
+        margin-left: 0;
+        padding-top: 30vh;
+    }
+
+
+}
