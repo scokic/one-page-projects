@@ -3,6 +3,10 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 nav {
     background-color: #BE3144;
     display: flex;
@@ -32,7 +36,7 @@ nav {
     overflow: hidden;
 }
 
-#header {
+#welcome-section {
     height: 100vh;
     background: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
     display: flex;
@@ -41,14 +45,14 @@ nav {
     justify-content: center;
 }
 
-#header h1{
+#welcome-section h1{
     display: block;
     font-size: 3.5rem;
     color: white;
     margin: 0;
 }
 
-#header p {
+#welcome-section p {
     display: block;
     color: #BE3144;
     font-style: italic;
@@ -57,60 +61,86 @@ nav {
 }
 
 .portfolio-section {
-    text-align: center;
-    background-color: #45567d;
     padding: 100px 50px;
+    background-color: #45567d;
+    text-align: center;
+}
+
+.portfolio-section h2 {
+    color: #f0f0f0;
+    font-size: 3rem;
+    line-height: 2.5rem;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #f0f0f0;
+    display: inline-block;
 }
 
 .portfolio-grid {
     display: grid;
-    max-width: 1280px;
-    margin: auto;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    overflow: hidden;
-    gap: 50px;
-}
-
-.project {
-    display: block;
-}
-
-.portfolio-section h2 {
-    color: white;
-    font-size: 2em;
-    padding-bottom: 25px;
-}
-
-.project img {
-    display: block;
+    grid-gap: 4rem;
     width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+}
+
+.portfolio-grid img {
+    height: calc(100% - 60px);
+    max-height: 380px;
+    width: 100%;
+    object-fit: cover;
 }
 
 .project p {
-    background-color: grey;
+    background-color: #303841;
     padding: 20px;
     margin: 0;
-    font-size: 1.2em;
+    font-size: 20px;
     font-weight: bold;
+    color: #f0f0f0;
+}
+
+span {
+    /* display: none;
+    color: black; */
+    color: #303841;
+}
+
+a:hover span {
+    color: #ff7f50;
+    transition: color 0.3s ease-in-out;
+}
+
+#profile-link {
     color: white;
-    transition: ease-out;
+    font-size: 1.2em;
+    background-color: #303841;
+    padding: 10px 20px;
+    border-radius: 2px;
 }
 
-.project p span {
-    display: none;
-    position: absolute;
-    color: orange;
-    font-weight: bold;
+#profile-link:hover {
+    background-color: #BE3144;
+    transition: background 0.3s ease-in-out;
 }
 
-.project p:hover span {
-    display: inline-block;
+
+@media only screen and (max-width: 480px) {
+    * {
+        font-size: 13px;
+    }
 }
 
-.span-left {
-    transform: translate(-20px);
+footer {
+    background-color: #303841;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.span-right {
-    transform: translate(5px);
+footer h2 {
+    margin: 0;
+    color: white;
 }
