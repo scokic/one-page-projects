@@ -1,0 +1,34 @@
+body {
+  background-color: #333;
+  color: white;
+}
+
+h1 {
+  font-size: 3em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: white;
+}
+
+.between {
+  position: fixed;
+  top: 0;
+  right: 0;
+  font-size: 1.2em;
+  margin: 25px 25px 0 0;
+}
+.btn {
+  background-color: white;
+  border: 0;
+  padding: 20px 40px;
+  font-size: 1.3em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 25px 0 0 25px;
+}
+
+h1 {
+  display: inline-block;
+  margin: auto;
+}
