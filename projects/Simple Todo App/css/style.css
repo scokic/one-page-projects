@@ -1,0 +1,97 @@
+* {
+  color: white;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: -apple-system, "Poppins", "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background-color: #010a20;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.page-wrapper {
+  background-color: #010a20;
+  border: 1px solid #262e41;
+  border-radius: 25px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  max-height: 812px;
+  max-width: 375px;
+}
+
+@media screen and (max-width: 400px) {
+  .page-wrapper {
+    border-radius: 0;
+  }
+}
+
+.task-list-wrapper {
+  background-color: #262e41;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.task-list-wrapper h1 {
+  font-size: 30px;
+  line-height: 33px;
+  margin: 0;
+}
+
+/* ------------------------------ TASK LIST ------------------------------ */
+
+.list-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  background-color: #fe8368;
+  border: none;
+  font-size: 0.6em;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.task-list {
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 600px;
+  overflow: auto;
+}
+
+.task-list label {
+  margin-left: 10px;
+  color: #dddee2;
+}
+
+/* ------------------------------ ADD NEW TASK ------------------------------ */
+
+.new-task-form {
+  display: flex;
+  background-color: #262e41;
+  padding: 15px;
+  border-radius: 10px;
+  gap: 15px;
+}
+
+.new-task-form .button {
+  background: #5881ea;
+}
+
+.new-task-input {
+  background: transparent;
+  border: none;
+  min-width: 100px;
+}

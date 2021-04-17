@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.png" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="task-list-wrapper">
+        <div class="list-title">
+          <h1>Todo</h1>
+          <button class="button">EDIT</button>
+        </div>
+
+        <div class="task-list">
+          <div class="task">
+            <input type="checkbox" checked />
+            <label>Create App UI</label>
+          </div>
+          <div class="task">
+            <input type="checkbox" checked />
+            <label>Function: Create new task</label>
+          </div>
+          <div class="task">
+            <input type="checkbox" />
+            <label>Function: Delete a task</label>
+          </div>
+          <div class="task">
+            <input type="checkbox" />
+            <label>Function: Mark task as done</label>
+          </div>
+          <div class="task">
+            <input type="checkbox" />
+            <label>Save to local storage</label>
+          </div>
+        </div>
+      </div>
+
+      <form class="new-task-form" action="">
+        <input
+          type="text"
+          class="new-task-input"
+          placeholder="Enter new task name"
+          id="new-task-name"
+        />
+        <input
+          type="submit"
+          class="button"
+          value="CREATE"
+          id="new-task-button"
+          onclick="newTaskSubmit()"
+        />
+      </form>
+    </div>
+  </body>
+</html>
