@@ -8,37 +8,20 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/script.js" defer></script>
     <link rel="shortcut icon" type="image/jpg" href="img/favicon.png" />
+    <script
+      src="https://kit.fontawesome.com/6d1426eb41.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="page-wrapper">
       <div class="task-list-wrapper">
         <div class="list-title">
           <h1>Todo</h1>
-          <button class="button">EDIT</button>
+          <button class="button edit-button">EDIT</button>
         </div>
 
-        <div class="task-list">
-          <div class="task">
-            <input type="checkbox" checked />
-            <label>Create App UI</label>
-          </div>
-          <div class="task">
-            <input type="checkbox" checked />
-            <label>Function: Create new task</label>
-          </div>
-          <div class="task">
-            <input type="checkbox" />
-            <label>Function: Delete a task</label>
-          </div>
-          <div class="task">
-            <input type="checkbox" />
-            <label>Function: Mark task as done</label>
-          </div>
-          <div class="task">
-            <input type="checkbox" />
-            <label>Save to local storage</label>
-          </div>
-        </div>
+        <div class="task-list hidden"></div>
       </div>
 
       <form class="new-task-form" action="">
@@ -53,7 +36,7 @@
           class="button"
           value="CREATE"
           id="new-task-button"
-          onclick="newTaskSubmit()"
+          onclick="createNewTask()"
         />
       </form>
     </div>
