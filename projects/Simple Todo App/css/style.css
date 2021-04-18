@@ -15,6 +15,9 @@ body {
 }
 
 .page-wrapper {
+  background-color: #010a20;
+  border: 1px solid #262e41;
+  border-radius: 25px;
   padding: 25px;
   display: flex;
   flex-direction: column;
@@ -22,6 +25,12 @@ body {
   justify-content: space-between;
   max-height: 812px;
   max-width: 375px;
+}
+
+@media screen and (max-width: 400px) {
+  .page-wrapper {
+    border: transparent;
+  }
 }
 
 .task-list-wrapper {

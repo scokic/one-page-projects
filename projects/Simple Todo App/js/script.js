@@ -7,10 +7,27 @@ let tasks = [
 ];
 
 let taskList = document.querySelector(".task-list");
-
 let taskEditButton = document.querySelector(".edit-button");
 let newTaskName = document.querySelector("#new-task-name");
 let newTaskForm = document.querySelector(".new-task-form");
+let deleteTaskButtons = document.querySelector(".delete-button");
+
+/* ------------------------------ CREATE UUID ------------------------------ */
+
+function createUUID() {
+  let dt = new Date().getTime();
+
+  const uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
+    /[xy]/g,
+    function (c) {
+      const r = (dt + Math.random() * 16) % 16 | 0;
+      dt = Math.floor(dt / 16);
+      return (c == "x" ? r : (r & 0x3) | 0x8).toString(16);
+    }
+  );
+
+  return uuid;
+}
 
 /* ------------------------------ ADD NEW TASK ------------------------------ */
 
@@ -18,13 +35,18 @@ function createNewTask() {
   if (newTaskName.value === "") {
     alert("pls fix");
   } else {
-    let newTask = { taskName: newTaskName.value, taskStatus: false };
+    let id = createUUID();
+    let newTask = {
+      taskName: newTaskName.value,
+      taskStatus: false,
+      taskId: id,
+    };
     tasks.push(newTask);
 
     taskList.insertAdjacentHTML(
       "beforeEnd",
       `
-        <div class="task">
+        <div class="task" id=${id}>
                 <input type="checkbox"/>
                 <label>${newTaskName.value}</label>
                 <div class="delete-button">
@@ -33,6 +55,8 @@ function createNewTask() {
               </div>
         `
     );
+
+    console.log(id);
 
     newTaskName.value = "";
     newTaskName.focus();
@@ -50,33 +74,20 @@ function createNewTask() {
 function printTasks() {
   let i;
   for (i = 0; i < tasks.length; i++) {
-    if (tasks[i].taskStatus === true) {
-      taskList.insertAdjacentHTML(
-        "beforeEnd",
-        `
-          <div class="task">
-                  <input type="checkbox" class="task-status" checked/>
+    let status = tasks[i].taskStatus === true ? "checked" : "";
+    let id = tasks[i].taskId;
+    taskList.insertAdjacentHTML(
+      "beforeEnd",
+      `
+          <div class="task" id="${id}">
+                  <input type="checkbox" class="task-status" ${status}/>
                   <label>${tasks[i].taskName}</label>
                   <div class="delete-button">
                     <i class="fas fa-times"></i>
                   </div>
                 </div>
           `
-      );
-    } else {
-      taskList.insertAdjacentHTML(
-        "beforeEnd",
-        `
-          <div class="task">
-                  <input type="checkbox" class="task-status" />
-                  <label>${tasks[i].taskName}</label>
-                  <div class="delete-button">
-                    <i class="fas fa-times"></i>
-                  </div>
-                </div>
-          `
-      );
-    }
+    );
   }
 }
 
@@ -99,8 +110,20 @@ taskEditButton.addEventListener("click", () => {
 
 /* ------------------------------ DELETE A TASK ------------------------------ */
 
-// selektuj task
-// obriši task sa fronta
-// obriši task iz liste svih taskova
+document.querySelectorAll(".delete-button").forEach((delBtn) => {
+  delBtn.addEventListener("click", () => {
+    let selectedTask = delBtn.parentElement;
+    let selectedTaskId = delBtn.parentElement.id;
 
-/* ------------------------------ MARK TASK AS DONE ------------------------------ */
+    //brisanje sa fronta
+    selectedTask.remove();
+
+    //brisanje iz array-a
+    function checkId(tasks) {
+      return tasks.taskId == selectedTaskId;
+    }
+
+    let taskIdIndex = tasks.findIndex(checkId);
+    tasks.splice(taskIdIndex, 1);
+  });
+});
